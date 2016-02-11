@@ -197,6 +197,12 @@ class KeyboardViewController: UIInputViewController {
 
     }
     
+    func setButtonStyle(button: UIButton, color: UIColor) {
+
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 1
+        button.layer.borderColor = color.CGColor
+    }
     
     func loadInterface() {
         print("ajosd")
@@ -206,7 +212,10 @@ class KeyboardViewController: UIInputViewController {
         view.addSubview(keyboardView)
         view.backgroundColor = keyboardView.backgroundColor
         nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside) // advanceToNextInputMode is already defined in template
-       
+        setButtonStyle(spaceBar, color: UIColor.whiteColor())
+        setButtonStyle(returnButton, color: UIColor.lightGrayColor())
+        setButtonStyle(nextKeyboardButton, color: UIColor.lightGrayColor())
+        
         
 //        buttons.append(smile1)
 //        buttons.append(smile2)
